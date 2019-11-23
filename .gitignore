@@ -1,4 +1,4 @@
-.gitignor
+.gitignore
 .metadata/*
 .recommenders/*
 movie-catalog-service/.mvn/*
