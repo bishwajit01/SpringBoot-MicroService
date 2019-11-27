@@ -9,7 +9,6 @@ public class Movie {
 	private String movieName;
 
 	public Movie() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Movie(String movieId, String movieName) {

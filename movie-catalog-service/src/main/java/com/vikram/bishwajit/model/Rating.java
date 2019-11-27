@@ -1,7 +1,6 @@
 package com.vikram.bishwajit.model;
 
 /**
- * 
  * @author Bishwajit.
  *
  */

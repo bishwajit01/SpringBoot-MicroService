@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vikram.bishwajit.model.Movie;
 
 /**
- * @author bvikram2
+ * @author Bishwajit.
  *
  */
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
 
-	@GetMapping("all")
+	@GetMapping("/all")
 	public List<Movie> getAllMovies() {
-		return Collections.singletonList(new Movie(1, "Bala"));
+		return Collections.singletonList(new Movie("1", "Bala"));
 	}
 	
-	@GetMapping("{movieId}")
-	public List<Movie> getMoviesById(@PathVariable("movieId") int id) {
-		return Collections.singletonList(new Movie(id, "Bala"));
+	@GetMapping("/{movieId}")
+	public Movie getMoviesById(@PathVariable("movieId") String id) {
+		return new Movie(id, "Bala");
 	}
 }

@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vikram.bishwajit.model.Rating;
 
 /**
- * @author bvikram2
+ * @author Bishwajit.
  *
  */
 @RestController
 @RequestMapping("/ratings")
 public class RatingResource {
 
-	@GetMapping("all")
-	public List<Rating> getAllRatings(@PathVariable("userId") String id) {
+	@GetMapping("/all")
+	public List<Rating> getAllRatings() {
 		return Collections.singletonList(new Rating("Bala", 4.3));
 	}
 
-	@GetMapping("{movieId}")
-	public List<Rating> getCatalogByUserId(@PathVariable("movieId") String id) {
-		return Collections.singletonList(new Rating(id, 3.8));
+	@GetMapping("/{movieId}")
+	public Rating getCatalogByUserId(@PathVariable("movieId") String id) {
+		return new Rating(id, 3.8);
 	}
 
 }

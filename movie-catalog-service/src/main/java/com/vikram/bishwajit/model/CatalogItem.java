@@ -1,13 +1,17 @@
 package com.vikram.bishwajit.model;
 
 /**
- * @author bvikram2
+ * @author Bishwajit.
  *
  */
 public class CatalogItem {
 	private String name;
 	private String desc;
 	private double rating;
+	
+	public CatalogItem() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public CatalogItem(String name, String desc, double rating) {
 		super();
