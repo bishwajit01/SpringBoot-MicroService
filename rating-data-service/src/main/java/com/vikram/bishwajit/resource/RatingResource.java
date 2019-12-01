@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vikram.bishwajit.model.Rating;
+import com.vikram.bishwajit.model.UserRating;
 
 /**
  * @author Bishwajit.
@@ -23,9 +24,16 @@ public class RatingResource {
 		return Collections.singletonList(new Rating("Bala", 4.3));
 	}
 
-	@GetMapping("/{movieId}")
-	public Rating getCatalogByUserId(@PathVariable("movieId") String id) {
+	@GetMapping("/movies/{movieId}")
+	public Rating getMovieRating(@PathVariable("movieId") String id) {
 		return new Rating(id, 3.8);
+	}
+	
+	@GetMapping("/user/{userId}")
+	public UserRating getUserRating(@PathVariable("userId") String id) {
+		UserRating userRating = new UserRating();
+		userRating.initData(id);
+		return userRating;
 	}
 
 }
