@@ -7,6 +7,9 @@ package com.vikram.bishwajit.model;
 public class Rating {
 	private String movieId;
 	private double rating;
+	public Rating() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Rating(String movieId, double rating) {
 		super();
