@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.netflix.discovery.DiscoveryClient;
 import com.vikram.bishwajit.model.CatalogItem;
 import com.vikram.bishwajit.model.Movie;
 import com.vikram.bishwajit.model.Rating;
@@ -31,6 +32,9 @@ public class MovieCatalogResource {
 	
 	@Autowired
 	private WebClient.Builder webClientBuilder;
+	
+	@Autowired
+	private DiscoveryClient discoveryClient;
 
 	@GetMapping("/all")
 	public List<CatalogItem> getCatalog() {
@@ -40,11 +44,11 @@ public class MovieCatalogResource {
 	@GetMapping("/restTemplate/{userId}")
 	public List<CatalogItem> getCatalogByUserIdUsingRestTemplate(@PathVariable("userId") String id) {
 		
-		UserRating userRating = restTemplate.getForObject("http://localhost:8883/ratings/user/" + id, UserRating.class);
+		UserRating userRating = restTemplate.getForObject("http://rating-service-api/ratings/user/" + id, UserRating.class);
 		
 		return userRating.getRatings().stream().map(
 				rating -> {
-					Movie movie = restTemplate.getForObject("http://localhost:8882/movies/" + rating.getMovieId(), Movie.class);
+					Movie movie = restTemplate.getForObject("http://movie-info-api/movies/" + rating.getMovieId(), Movie.class);
 					return new CatalogItem(movie.getMovieName(), "About AGENTS", rating.getRating());
 				}).collect(Collectors.toList());
 
