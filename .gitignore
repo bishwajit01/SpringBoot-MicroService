@@ -28,3 +28,14 @@ radio-data-service/.project
 radio-data-service/HELP.md
 radio-data-service/mvnw
 radio-data-service/mvnw.cmd
+/.metadata/
+/.recommenders/
+eureka-server/.mvn/*
+eureka-server/.settings/*
+eureka-server/target/*
+eureka-server/.classpath/
+eureka-server/.gitignore
+eureka-server/.project
+eureka-server/HELP.md
+eureka-server/mvnw
+eureka-server/mvnw.cmd
