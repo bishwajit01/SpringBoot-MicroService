@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
-
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vikram.bishwajit.model.CatalogItem;
 import com.vikram.bishwajit.model.Movie;
 import com.vikram.bishwajit.model.Rating;
@@ -43,6 +43,7 @@ public class MovieCatalogResource {
 	}
 
 	@GetMapping("/restTemplate/{userId}")
+	@HystrixCommand(fallbackMethod = "getFallbackCatalog")
 	public List<CatalogItem> getCatalogByUserIdUsingRestTemplate(@PathVariable("userId") String id) {
 		
 		UserRating userRating = restTemplate.getForObject("http://rating-service-api/ratings/user/" + id, UserRating.class);
@@ -53,6 +54,10 @@ public class MovieCatalogResource {
 					return new CatalogItem(movie.getMovieName(), "About AGENTS", rating.getRating());
 				}).collect(Collectors.toList());
 
+	}
+	
+	public List<CatalogItem> getFallbackCatalog(@PathVariable("userId") String id) {
+		return Arrays.asList(new CatalogItem("No Movie", "", 0));
 	}
 	
 	@GetMapping("/webClient/{userId}")
