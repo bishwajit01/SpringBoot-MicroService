@@ -3,6 +3,7 @@ package com.vikram.bishwajit.springbootconfiguration;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,9 +43,12 @@ public class GreetingController {
 	 */
 	@Value("#{${my.map.values}}")
 	private Map<String, String> mapValues;
+	
+	@Autowired
+	private DbSetting dbSetting;
 
 	@GetMapping("/greeting")
 	public String greet() {
-		return this.greeting + firstName + listValues + mapValues;
+		return this.greeting + firstName + listValues + mapValues + dbSetting.dispaly();
 	}
 }
