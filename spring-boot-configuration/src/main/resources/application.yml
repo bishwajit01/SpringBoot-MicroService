@@ -1,0 +1,11 @@
+my:
+    greeting: Hello, Sam
+    list.values: 1,2,3
+    map.values: "{sfn: 'Anushree', sln: 'Kashyap'}"
+
+db:
+    connection: oracle
+    hostName: xe
+    port: 2022
+
+management.endpoints.web.exposure.include: "*"
