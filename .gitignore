@@ -39,3 +39,8 @@ eureka-server/.project
 eureka-server/HELP.md
 eureka-server/mvnw
 eureka-server/mvnw.cmd
+spring-boot-configuration/.mvn/*
+spring-boot-configuration/.mvn/*
+spring-boot-configuration/.mvn/*
+spring-boot-configuration/mvnw
+spring-boot-configuration/mvnw.cmd
