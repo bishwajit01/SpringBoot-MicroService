@@ -1,5 +1,5 @@
 my:
-    greeting: Hello, Sam
+    greeting: Hello, ${name}
     list.values: 1,2,3
     map.values: "{sfn: 'Anushree', sln: 'Kashyap'}"
 
@@ -9,3 +9,5 @@ db:
     port: 2022
 
 management.endpoints.web.exposure.include: "*"
+
+name: VikramFrom_yml
