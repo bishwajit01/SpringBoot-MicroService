@@ -1,0 +1,9 @@
+my: 
+    greeting: "Hello, Name_yml_from_config"
+    list.values: 1,2,3,4,5
+    map.values: "{sfn:'Anushree', sln:'Kashyap'}"
+db: 
+    connection: oracle
+    hostName: xe
+    port: 3035
+management.endpoints.web.exposure.include: "*"
