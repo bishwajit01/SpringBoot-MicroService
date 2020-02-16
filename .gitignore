@@ -44,3 +44,6 @@ spring-boot-configuration/.mvn/*
 spring-boot-configuration/.mvn/*
 spring-boot-configuration/mvnw
 spring-boot-configuration/mvnw.cmd
+spring-boot-config-server/.mvn/*
+spring-boot-config-server/mvnw
+spring-boot-config-server/mvnw.cmd
