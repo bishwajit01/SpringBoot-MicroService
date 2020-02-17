@@ -1,5 +1,5 @@
 my: 
-    greeting: "Hello, Name_yml_from_config"
+    greeting: "Hello, Name_yml_from_config_v2"
     list.values: 1,2,3,4,5
     map.values: "{sfn:'Anushree', sln:'Kashyap'}"
 db: 
