@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 /**
  * You have to use @ResquestScope on the bean whose value yu need to be updated.
- * You have to do a POST request with the body {"status":"UP"}
+ * You have to do a POST request with the body {"status":"UP"} to the URL:
+ * http://localhost:8080/actuator/refresh
  * The value will be updated.
  */
 public class GreetingController {
