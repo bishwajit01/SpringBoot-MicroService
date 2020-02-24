@@ -7,3 +7,6 @@ db:
     hostName: xe
     port: 2022
 management.endpoints.web.exposure.include: "*"
+
+# to make profile active
+spring.profiles.active: testY
